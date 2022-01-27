@@ -23,9 +23,10 @@
 # Ignore TextMesh Pro Plugin
 /[Aa]ssets/TextMesh Pro*
 
-# Ignore Assets Packs
+# Ignore Assets Pack
 /[Aa]ssets/[Aa]ssets [Pp]ack*
-/[Aa]ssets/[Aa]ssets [Pp]acks*
+
+# Ignore Asset Packs
 /[Aa]ssets/[Aa]sset [Pp]acks*
 
 # Ignore APIKeys folder
