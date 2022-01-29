@@ -7,6 +7,11 @@ public class PlayerControls : MonoBehaviour
 {
     [SerializeField] private float controlSpeed = 20f;
 
+    [Header("Borders")]
+    [SerializeField] private float xRange = 5f;
+    [SerializeField] private float yRangeMin = 5f;
+    [SerializeField] private float yRangeMax = 5f;
+
     private Vector2 moveInput;
 
     private void Update()
@@ -22,11 +27,13 @@ public class PlayerControls : MonoBehaviour
     private void PlayerMove()
     {
         float xOffset = moveInput.x * controlSpeed * Time.deltaTime;
-        float newPositionX = transform.localPosition.x + xOffset;
+        float rawPositionX = transform.localPosition.x + xOffset;
+        float clampedPositionX = Mathf.Clamp(rawPositionX, -xRange, xRange);
 
         float yOffset = moveInput.y * controlSpeed * Time.deltaTime;
-        float newPositionY = transform.localPosition.y + yOffset;
+        float rawPositionY = transform.localPosition.y + yOffset;
+        float clampedPositionY = Mathf.Clamp(rawPositionY, yRangeMin, yRangeMax);
 
-        transform.localPosition = new Vector3(newPositionX, newPositionY, transform.localPosition.z);
+        transform.localPosition = new Vector3(clampedPositionX, clampedPositionY, transform.localPosition.z);
     }
 }
