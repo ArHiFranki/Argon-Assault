@@ -9,14 +9,20 @@ public class PlayerControls : MonoBehaviour
 
     [Header("Borders")]
     [SerializeField] private float xRange = 5f;
-    [SerializeField] private float yRangeMin = 5f;
-    [SerializeField] private float yRangeMax = 5f;
+    [SerializeField] private float yRange = 7f;
+
+    [Header("Rotation")]
+    [SerializeField] private float positionPitchFactor = -2f;
+    [SerializeField] private float controlPitchFactor = -10f;
+    [SerializeField] private float positionYawFactor = 2f;
+    [SerializeField] private float controlRollFactor = 20f;
 
     private Vector2 moveInput;
 
     private void Update()
     {
-        PlayerMove();
+        ProcessTranslation();
+        ProcessRotation();
     }
 
     private void OnMove(InputValue value)
@@ -24,7 +30,7 @@ public class PlayerControls : MonoBehaviour
         moveInput = value.Get<Vector2>();
     }
 
-    private void PlayerMove()
+    private void ProcessTranslation()
     {
         float xOffset = moveInput.x * controlSpeed * Time.deltaTime;
         float rawPositionX = transform.localPosition.x + xOffset;
@@ -32,8 +38,20 @@ public class PlayerControls : MonoBehaviour
 
         float yOffset = moveInput.y * controlSpeed * Time.deltaTime;
         float rawPositionY = transform.localPosition.y + yOffset;
-        float clampedPositionY = Mathf.Clamp(rawPositionY, yRangeMin, yRangeMax);
+        float clampedPositionY = Mathf.Clamp(rawPositionY, -yRange, yRange);
 
         transform.localPosition = new Vector3(clampedPositionX, clampedPositionY, transform.localPosition.z);
+    }
+
+    private void ProcessRotation()
+    {
+        float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;
+        float pitchDueToControlThrow = moveInput.y * controlPitchFactor;
+
+        float pitch = pitchDueToPosition + pitchDueToControlThrow;
+        float yaw = transform.localPosition.x * positionYawFactor;
+        float roll = moveInput.x * controlRollFactor;
+
+        transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
 }

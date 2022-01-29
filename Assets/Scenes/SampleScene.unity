@@ -461,7 +461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.06104851, y: 0, z: 0, w: 0.99813485}
-  m_LocalPosition: {x: 0, y: 4.5, z: -19}
+  m_LocalPosition: {x: 0, y: 2.5, z: -19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1933858226}
@@ -608,6 +608,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1933858226}
     m_Modifications:
+    - target: {fileID: -1560827009148000599, guid: 3219203b6c0ef3743af06515d73c61b6, type: 3}
+      propertyPath: controlRollFactor
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: -1560827009148000599, guid: 3219203b6c0ef3743af06515d73c61b6, type: 3}
+      propertyPath: positionYawFactor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1560827009148000599, guid: 3219203b6c0ef3743af06515d73c61b6, type: 3}
+      propertyPath: controlPitchFactor
+      value: -15
+      objectReference: {fileID: 0}
     - target: {fileID: 4801329189312228542, guid: 3219203b6c0ef3743af06515d73c61b6, type: 3}
       propertyPath: m_RootOrder
       value: 1
