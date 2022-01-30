@@ -17,17 +17,27 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private float positionYawFactor = 2f;
     [SerializeField] private float controlRollFactor = 20f;
 
+    [Header("Particles")]
+    [SerializeField] private GameObject[] lasers;
+
     private Vector2 moveInput;
+    private bool isFiring;
 
     private void Update()
     {
         ProcessTranslation();
         ProcessRotation();
+        ProcessFiring();
     }
 
     private void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+    }
+
+    private void OnFire(InputValue value)
+    {
+        isFiring = value.isPressed;
     }
 
     private void ProcessTranslation()
@@ -53,5 +63,33 @@ public class PlayerControls : MonoBehaviour
         float roll = moveInput.x * controlRollFactor;
 
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+    }
+
+    private void ProcessFiring()
+    {
+        if (isFiring)
+        {
+            ActivateLasers();
+        }
+        else
+        {
+            DeactivateLasers();
+        }
+    }
+
+    private void ActivateLasers()
+    {
+        foreach (GameObject laser in lasers)
+        {
+            laser.SetActive(true);
+        }
+    }
+
+    private void DeactivateLasers()
+    {
+        foreach (GameObject laser in lasers)
+        {
+            laser.SetActive(false);
+        }
     }
 }
