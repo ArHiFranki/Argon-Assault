@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerControls : MonoBehaviour
 {
+    [Header("General Settings")]
+    [Tooltip("How fast ship moves up and down based upon player input")] 
     [SerializeField] private float controlSpeed = 20f;
 
     [Header("Borders")]
@@ -13,11 +15,11 @@ public class PlayerControls : MonoBehaviour
 
     [Header("Rotation")]
     [SerializeField] private float positionPitchFactor = -2f;
-    [SerializeField] private float controlPitchFactor = -10f;
     [SerializeField] private float positionYawFactor = 2f;
+    [SerializeField] private float controlPitchFactor = -10f;
     [SerializeField] private float controlRollFactor = 20f;
 
-    [Header("Particles")]
+    [Header("Lasers Particle Systems")]
     [SerializeField] private GameObject[] lasers;
 
     private Vector2 moveInput;
