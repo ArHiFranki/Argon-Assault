@@ -4,9 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PlayerControls))]
+[RequireComponent(typeof(MeshRenderer))]
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] private float loadDelay = 1f;
+
+    [Header("Explosion Effect")]
+    [SerializeField] private ParticleSystem crashVFX;
+
+    private bool isCrash;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,8 +21,14 @@ public class CollisionHandler : MonoBehaviour
 
     private void StartCrashQequence()
     {
-        GetComponent<PlayerControls>().enabled = false;
-        StartCoroutine(RestartLevelSequence(loadDelay));
+        if (!isCrash)
+        {
+            isCrash = true;
+            crashVFX.Play();
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<PlayerControls>().enabled = false;
+            StartCoroutine(RestartLevelSequence(loadDelay));
+        }
     }
 
     private IEnumerator RestartLevelSequence(float delay)
