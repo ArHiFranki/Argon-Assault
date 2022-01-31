@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6023994779081373614}
   - component: {fileID: 6023994779081373617}
   m_Layer: 0
-  m_Name: Explosion VFX
+  m_Name: Enemy Explosion VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,10 +226,10 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.9622642, g: 0.92241836, b: 0.9123354, a: 1}
-        key1: {r: 1, g: 0.93975216, b: 0, a: 1}
-        key2: {r: 1, g: 0.6724593, b: 0.23921567, a: 1}
-        key3: {r: 0.9433962, g: 0.3955362, b: 0.24474904, a: 0}
-        key4: {r: 0.8867924, g: 0.18823427, b: 0.21503636, a: 0}
+        key1: {r: 0, g: 1, b: 0.7890246, a: 1}
+        key2: {r: 0.23921567, g: 0.6547146, b: 1, a: 1}
+        key3: {r: 0.24313724, g: 0.36601365, b: 0.94509804, a: 0}
+        key4: {r: 0.3970191, g: 0.18823527, b: 0.8862745, a: 0}
         key5: {r: 0.31132078, g: 0.039649345, b: 0.047882453, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
@@ -4761,7 +4761,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 4233f05b063ce0a41a0e95e42d0ee72a, type: 2}
-  - {fileID: 2100000, guid: 2ee365f7bb02bd34e92396f1b3507d28, type: 2}
+  - {fileID: 2100000, guid: 8214ec111df96a34cbeb4866b90a8bb8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
