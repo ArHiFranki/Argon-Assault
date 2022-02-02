@@ -238,7 +238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5545791405055294037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.289188, y: 0, z: -0.18561554}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1.5}
   m_Children:
   - {fileID: 5547943237373387121}
@@ -311,7 +311,6 @@ MonoBehaviour:
   scorePerHit: 10
   deathVFX: {fileID: 6023994779081373616, guid: fa76ec600e7ba1d4ea271faa0d0f8eed, type: 3}
   hitVFX: {fileID: 6023994779081373616, guid: bc544ae5402ef754996d994c09cc0f51, type: 3}
-  parent: {fileID: 0}
 --- !u!1 &5545872681323363293
 GameObject:
   m_ObjectHideFlags: 0
