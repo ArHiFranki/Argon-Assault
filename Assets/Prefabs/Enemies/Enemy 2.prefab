@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHitPoints: 4
   scorePerHit: 15
-  deathVFX: {fileID: 6023994779081373616, guid: fa76ec600e7ba1d4ea271faa0d0f8eed, type: 3}
+  deathFX: {fileID: 6023994779081373616, guid: fa76ec600e7ba1d4ea271faa0d0f8eed, type: 3}
   hitVFX: {fileID: 6023994779081373616, guid: bc544ae5402ef754996d994c09cc0f51, type: 3}
 --- !u!65 &-958302673780414214
 BoxCollider:

@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int scorePerHit;
 
     [Header("Particle Systems Effects")]
-    [SerializeField] private GameObject deathVFX;
+    [SerializeField] private GameObject deathFX;
     [SerializeField] private GameObject hitVFX;
 
     private GameObject parentGameObject;
@@ -45,8 +45,8 @@ public class Enemy : MonoBehaviour
 
     private void InstantiateVFX(GameObject particleVFX)
     {
-        GameObject vfx = Instantiate(particleVFX, transform.position, Quaternion.identity);
-        vfx.transform.parent = parentGameObject.transform;
+        GameObject fx = Instantiate(particleVFX, transform.position, Quaternion.identity);
+        fx.transform.parent = parentGameObject.transform;
     }
 
     private void ReduseEnemyHitPoints()
@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
 
     private void DestroyEnemy()
     {
-        InstantiateVFX(deathVFX);
+        InstantiateVFX(deathFX);
         gameObject.SetActive(false);
         Destroy(gameObject);
     }
