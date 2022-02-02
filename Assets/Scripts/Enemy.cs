@@ -11,13 +11,14 @@ public class Enemy : MonoBehaviour
     [Header("Particle Systems Effects")]
     [SerializeField] private GameObject deathVFX;
     [SerializeField] private GameObject hitVFX;
-    [SerializeField] private Transform parent;
 
+    private GameObject parentGameObject;
     private ScoreBoard myScoreBoard;
 
     private void Awake()
     {
-        myScoreBoard = FindObjectOfType<ScoreBoard>();  
+        myScoreBoard = FindObjectOfType<ScoreBoard>();
+        parentGameObject = GameObject.FindWithTag("SpawnAtRuntime");
     }
 
     private void Start()
@@ -46,7 +47,7 @@ public class Enemy : MonoBehaviour
     private void InstantiateVFX(GameObject particleVFX)
     {
         GameObject vfx = Instantiate(particleVFX, transform.position, Quaternion.identity);
-        vfx.transform.parent = parent;
+        vfx.transform.parent = parentGameObject.transform;
     }
 
     private void ReduseEnemyHitPoints()
