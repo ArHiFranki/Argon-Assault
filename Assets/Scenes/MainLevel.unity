@@ -185,10 +185,13 @@ PlayableDirector:
   m_ExposedReferences:
     m_References:
     - b26d0778b87e6df4cbca16d8be705928: {fileID: 26383072}
+    - cd9415f1df541ed41bf4a8b12c816e20: {fileID: 1985137966}
     - 2c560e921c4a2d549a3dc4a408471a3a: {fileID: 660066856}
     - 6899572b1d02c9a458c454ec368fea53: {fileID: 0}
+    - 4ac71f58fcf74ef48bd5b29ffb00a33a: {fileID: 1985137966}
     - 8eb71e870db3a0c419c5c60a4a9996de: {fileID: 0}
     - 36abed739335993409f19db746ab0d0b: {fileID: 873684939}
+    - 7c86f101ad5a2be48b9d45ab299dae62: {fileID: 1985137966}
 --- !u!4 &736124558
 Transform:
   m_ObjectHideFlags: 0
@@ -402,6 +405,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5085064723246073084, guid: 0234aa70077444849a02a0ad3b29408d, type: 3}
   m_PrefabInstance: {fileID: 5085064725171507535}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1985137966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1985137966, guid: 1cd967971885108479f06f3ea92805b7, type: 3}
+  m_PrefabInstance: {fileID: 2339767834401211953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &93352636911680875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -523,9 +531,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2339767832841217727, guid: 1cd967971885108479f06f3ea92805b7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 29.812134
+    - target: {fileID: 802451323, guid: 1cd967971885108479f06f3ea92805b7, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.22745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 802451323, guid: 1cd967971885108479f06f3ea92805b7, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.88235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 802451323, guid: 1cd967971885108479f06f3ea92805b7, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.9529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 802451323, guid: 1cd967971885108479f06f3ea92805b7, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4282049011
       objectReference: {fileID: 0}
     - target: {fileID: 2339767833093603159, guid: 1cd967971885108479f06f3ea92805b7, type: 3}
       propertyPath: m_Name
