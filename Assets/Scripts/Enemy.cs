@@ -39,7 +39,6 @@ public class Enemy : MonoBehaviour
 
     private void ProcessHit()
     {
-        myScoreBoard.IncreaseScore(scorePerHit);
         InstantiateVFX(hitVFX);
         ReduseEnemyHitPoints();
     }
@@ -55,6 +54,7 @@ public class Enemy : MonoBehaviour
         enemyHitPoints--;
         if (enemyHitPoints < 1)
         {
+            myScoreBoard.IncreaseScore(scorePerHit);
             DestroyEnemy();
         }
     }
